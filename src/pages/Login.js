@@ -4,8 +4,11 @@ import Swal from 'sweetalert2'
 import { Redirect, Route } from 'react-router-dom';
 
 function Login() {
+
+    let history = useHistory()
+
     if(sessionStorage.getItem('id') !== null){
-        <Route path="/maps" />
+        history.push("/maps")
 
     }
     const formSend = (e) =>{
@@ -39,7 +42,7 @@ function Login() {
             }else if(res.message === "succes"){
                 sessionStorage.setItem('id', res.data.id);
                 sessionStorage.setItem('profile', `${res.data.first_name} ${res.data.last_name}`);
-                <Redirect to="/maps"></Redirect>
+                history.push("/maps")
             }
         })
     }
