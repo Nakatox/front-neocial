@@ -1,0 +1,44 @@
+.calendar-container{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    // margin:0 40px;
+    z-index: 99;
+    .calendar{
+        background-color: white;
+        padding: 0 20px 20px 20px;
+        border-radius: 0 0 20px 20px;
+        width: 50vw;
+        margin-left: 15vw;
+    }
+    .button-drop{
+        width: 70px;
+        border: solid black 1px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        cursor: pointer;
+        margin-left:48.5% ;
+        border-radius: 0 0 50px 50px;
+        img{
+            width: 15px;
+        }
+    }
+}
+.button-drop{
+    width: 70px;
+    border: solid black 1px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    margin-left:48.5% ;
+    border-radius: 0 0 50px 50px;
+    img{
+        width: 15px;
+    }
+}
