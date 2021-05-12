@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid';
+import { printCourse } from '../Webservices'
 
 
 function Calendar() {
     const [check, setCheck] = useState(true)
+    const [check2, setCheck2] = useState(true)
+    const [courses, setCourses] = useState([])
 
     setTimeout(() => {
         document.querySelector('.fc-today-button').innerHTML = "Aujourd'hui"
@@ -29,6 +32,18 @@ function Calendar() {
         }
     }
 
+    useEffect(() => {
+
+        if(check2 === true){
+            printCourse(parseInt(sessionStorage['id'])).then((data)=>{
+                setCourses(data.data.course);
+                console.log(data.data.course);
+            })
+            setCheck2(false)
+        }
+        
+    }, [courses,check2])
+    
     return (
         <div>
             <div className="calendar-container">
@@ -41,7 +56,7 @@ function Calendar() {
                         slotMinTime = '07:00'
                         slotMaxTime = '19:00'
                         dayHeaders= "false"
-                        timeZone= 'local'
+                        locale= 'fr'
                         themeSystem="standard"
                         weekends={false}
                         titleFormat={[
@@ -50,21 +65,7 @@ function Calendar() {
                             }
                         ]
                         }
-                        events={[
-                            {
-                                title:' Cours Math srekjfr ebrerbngk r rhgirnreerbghb',
-                                // daysOfWeek: [ '2' ],
-                                start:'2021-04-29',
-                                startTime: '10:45:00',
-                                endTime: '11:45:00'
-                            },
-                            {
-                                title:' Cours Francais',
-                                daysOfWeek: [ '2' ],
-                                startTime: '11:45:00',
-                                endTime: '12:45:00'
-                            }
-                        ]}
+                        events={courses}
                     />
                 </div>
                 <div className="button-drop" onClick={mooveCalendar}>

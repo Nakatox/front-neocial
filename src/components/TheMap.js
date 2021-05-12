@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
 
-import { MapContainer, TileLayer, Marker, Popup, Rectangle, FeatureGroup,SVGOverlay } from 'react-leaflet'
+import { MapContainer, TileLayer, Popup, Rectangle, FeatureGroup,SVGOverlay } from 'react-leaflet'
 
 
 function TheMap() {
@@ -9,7 +9,6 @@ function TheMap() {
     //Appeller l'API et recup des coordonneés : (ici elles sont fictives)
     //changer le 4e chiffre apres la virgule de -1 pour avoir une salle 
     // ex :[48.866309165063306, 2.373643364075097],[48.866208165063306, 2.373543364075097],
-
     const buildingLocation = [48.866309165063306, 2.373643364075097]
     const roomLayer = [
         [
