@@ -9,13 +9,15 @@ function Calendar() {
     const [check, setCheck] = useState(true)
     const [check2, setCheck2] = useState(true)
     const [courses, setCourses] = useState([])
+    const [title, setTitle] = useState()
+    // const [months, setMonth] = useState([])
 
+    // setMonth([ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", 
+    // "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ])
     setTimeout(() => {
         document.querySelector('.fc-today-button').innerHTML = "Aujourd'hui"
-        document.querySelector('.fc-today-button').style.backgroundColor = "#A8BDFF"
-        document.querySelector('.fc-next-button').style.backgroundColor = "#819eff"
-        document.querySelector('.fc-prev-button').style.backgroundColor = "#819eff"
-    }, 5);
+        // document.querySelector('.fc-timegrid-event').style.backgroundColor = "red"
+    }, 500);
    
     function mooveCalendar(){
         if(!check){
@@ -26,7 +28,7 @@ function Calendar() {
             setCheck(true)
         }else{
             document.querySelector('.image').style.transform = "rotate(180deg)"
-            document.querySelector('.calendar-container').style.display = "block"
+            document.querySelector('.calendar-container').style.display = "flex"
             document.querySelector('.button-drop2').style.display = "none"
             setCheck(false)
         }
@@ -37,12 +39,13 @@ function Calendar() {
         if(check2 === true){
             printCourse(parseInt(sessionStorage['id'])).then((data)=>{
                 setCourses(data.data.course);
-                console.log(data.data.course);
             })
             setCheck2(false)
+            setTitle(document.querySelector('.fc-toolbar-title').textContent)
+            // document.querySelector('.fc-toolbar-title').innerHTML = `Semaine du ${title.substr(0,2)} ${months[parseInt(title.substr(3,2))]} au ${title.substr(13,2)} ${months[parseInt(title.substr(3,2))]} ${title.substr(19,4)}`
         }
         
-    }, [courses,check2])
+    }, [courses,check2, title])
     
     return (
         <div>
@@ -53,8 +56,8 @@ function Calendar() {
                         initialView="timeGridWeek"
                         // contentHeight="400px"
                         height= "auto"
-                        slotMinTime = '07:00'
-                        slotMaxTime = '19:00'
+                        slotMinTime = '08:00'
+                        slotMaxTime = '18:00'
                         dayHeaders= "false"
                         locale= 'fr'
                         themeSystem="standard"
@@ -68,9 +71,63 @@ function Calendar() {
                         events={courses}
                     />
                 </div>
-                <div className="button-drop" onClick={mooveCalendar}>
-                    <img src="./img/login/arrow-down.png" alt="" className="image" />
+                <div className="work-day-container">
+                        <div className="title">
+                            <p>Devoirs du jour</p>
+                            <p>Toutes</p>
+                        </div>
+                        <ul className="list">
+                            <li>
+                                <div>
+                                    <input type="checkbox" />
+                                    <p><span>Francais</span> - Pour le 10 Mai</p>
+                                </div>
+                                <p className="to-do">Rédaction La Princesse de Clèves</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" />
+                                    <p><span>Mathématique</span> - Pour le 10 Mai</p>
+                                </div>
+                                <p className="to-do">Evaluation</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" />
+                                    <p><span>SVT</span> - Pour le 10 Mai</p>
+                                </div>
+                                <p className="to-do">Evaluation</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" />
+                                    <p><span>Musique</span> - Pour le 10 Mai</p>
+                                </div>
+                                <p className="to-do">Evaluation</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" />
+                                    <p><span>Physique Cimie</span> - Pour le 10 Mai</p>
+                                </div>
+                                <p className="to-do">Evaluation</p>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="checkbox" />
+                                    <p><span>Physique Cimie</span> - Pour le 10 Mai</p>
+                                </div>
+                                <p className="to-do">Réviser Chapitre 6 + Exo 9 p.77</p>
+                            </li>
+                        </ul>
+                        <div className="search">
+                          <input type="text" placeholder="Ajouter une nouvelle tâche" />
+
+                        </div>
                 </div>
+                {/* <div className="button-drop" onClick={mooveCalendar}>
+                    <img src="./img/login/arrow-down.png" alt="" className="image" />
+                </div> */}
             </div>
             <div className="button-drop button-drop2" onClick={mooveCalendar}>
                 <img src="./img/login/arrow-down.png" alt="" className="image" />

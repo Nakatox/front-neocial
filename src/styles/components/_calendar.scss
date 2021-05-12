@@ -2,16 +2,72 @@
     display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     // margin:0 40px;
     z-index: 99;
+    font-family: $font-1;
+    background-color:#F2F2F2 ;
     .calendar{
-        background-color: white;
-        padding: 0 20px 20px 20px;
+        background-color: none;
+        margin: 1vw;
         border-radius: 0 0 20px 20px;
-        width: 50vw;
-        margin-left: 15vw;
+        width: 68vw;
+        // margin-left: 7vw;
+        .fc-scrollgrid-sync-table, .fc-timegrid-divider{
+            display: none;
+        }
+        .fc-today-button{
+            background-color:#A8BDFF ;
+        }
+        .fc-next-button,.fc-prev-button{
+            background-color:#819eff ;
+        }
+        .fc-header-toolbar{
+            background-color: $color-blue-satin;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 0;
+        }
+        .fc-col-header-cell-cushion {
+            font-size: 1.2vw;
+            padding:20px;
+        }
+        .fc-timegrid-slot-label{
+            border-top: none;
+ padding: 20px 0 ;
+        }
+        .fc-timegrid-slot{
+           padding: 7px 0 ; 
+        }
+        .fc-timegrid-slot-label-cushion{
+            font-weight: 500;
+            padding: 0 20px;
+        }
+        .fc-timegrid-slot-lane{
+            border-color:rgb(228, 228, 228);
+        }
+        .fc-scrollgrid {
+            background-color: white;
+        border-radius: 0 0 20px 20px;
+
+        }
+        .fc-timegrid-event{
+            background-color: #bab8f5;
+            
+            border-left: solid 6px #827FD5;
+        }
+        .fc-event-main-frame{
+            text-align: center;
+            display: flex;
+            
+        }
+        .fc-event-title{
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
     }
     .button-drop{
         width: 70px;
@@ -25,6 +81,69 @@
         border-radius: 0 0 50px 50px;
         img{
             width: 15px;
+        }
+    }
+    .work-day-container{
+        font-family: $font-1;
+        border-radius: 10px;
+        padding: 20px;
+        margin-right: 20px;
+        box-shadow: -1px 6px 5px 2px rgba(0,0,0,0.07);
+        background-color: white;
+        width: 25%;
+        min-width: 200px;
+
+        .title{
+            display: flex;
+            justify-content: space-between;
+            border-bottom:solid rgb(221, 221, 221) 2px;
+            padding-bottom: 10px;
+        }
+        .title>p:nth-child(1){
+            font-size: 23px;
+            font-weight: bold;
+        }
+        .title>p:nth-child(2){
+            font-size: 23px;
+            font-weight: bold;
+            opacity: 0.4;
+        }
+        .list{
+            li{
+                border-bottom: solid 2px rgb(248, 248, 248);
+                padding:15px 0;
+                div{
+                    display: flex;
+                    input{
+                        background-color: $color-light-blue;
+                    }
+                    p{
+                        padding-left: 10px;
+                        font-size: 15px;
+                        font-weight: 500;
+                        span{
+                            color: $color-light-blue;
+                        }
+                    }
+                }
+                p{
+                    font-size: 15px;
+                }
+                .to-do{
+                    padding-top: 10px ;
+                    padding-left: 30px;
+                }
+            }
+        }
+    }
+    .search{
+        box-shadow: 0px -6px 5px 0px rgba(0,0,0,0.03);
+
+        input{
+            border: none;
+            padding:10px 15px ;
+            width: 90%;
+            
         }
     }
 }
