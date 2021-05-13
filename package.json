@@ -10,6 +10,8 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
     "jquery": "^3.6.0",
     "leaflet": "^1.7.1",
     "node-sass": "^5.0.0",
@@ -20,8 +22,12 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "socket.io": "^4.0.2",
+    "simple-peer": "^9.11.0",
+    "socket.io": "^4.1.1",
+    "socket.io-client": "^4.1.1",
+    "styled-components": "^5.3.0",
     "sweetalert2": "^10.16.6",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
