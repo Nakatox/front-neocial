@@ -40,7 +40,7 @@ const videoConstraints = {
 };
 
 
-function Call(props) {
+function Room(props) {
     
 
     const [peers, setPeers] = useState([]);
@@ -48,9 +48,11 @@ function Call(props) {
     const userVideo = useRef();
     const peersRef = useRef([]);
     const roomID = props.match.params.roomID;
+    
 
     useEffect(() => {
         socketRef.current = io.connect("/");
+        // console.log(io.connect("http://localhost:8000"));
         navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true }).then(stream => {
             userVideo.current.srcObject = stream;
             socketRef.current.emit("join room", roomID);
@@ -62,6 +64,7 @@ function Call(props) {
                         peerID: userID,
                         peer,
                     })
+
                     peers.push(peer);
                 })
                 setPeers(peers);
@@ -131,4 +134,4 @@ function Call(props) {
     )
 }
 
-export default Call
+export default Room

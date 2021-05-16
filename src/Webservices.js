@@ -19,4 +19,14 @@ const printCourse = (id) => {
     }
 )}
 
-export { connectUser, printCourse }
+const sendRoomUrl = (id) => {
+    return new Promise((resolve,reject)=>{
+        fetch((`http://neocial.local/course/user/?id_user=${id}`))
+        .then((res)=>{ res.json().then((data)=>{
+            resolve(data)
+        })
+        })
+    }
+)}
+
+export { connectUser, printCourse, sendRoomUrl }

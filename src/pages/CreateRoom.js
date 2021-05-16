@@ -1,10 +1,12 @@
 import React from "react";
 import { v1 as uuid } from "uuid";
+import { sendRoomUrl } from '../Webservices'
 
-const CreateCall = (props) => {
+const CreateRoom = (props) => {
     function create() {
         const id = uuid();
-        props.history.push(`/call/${id}`);
+        sendRoomUrl(id)
+        props.history.push(`/room/${id}`);
     }
  
     return (
@@ -12,4 +14,4 @@ const CreateCall = (props) => {
     );
 };
 
-export default CreateCall;
+export default CreateRoom;

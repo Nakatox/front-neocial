@@ -23,7 +23,7 @@ function Menu() {
             <div className="links">
                 <ul>
                    <NavLink exact to ="/maps" activeClassName="activeNavlinkMenu"><li>Carte de l'établissement</li></NavLink>
-                   <NavLink exact to ="/call" activeClassName="activeNavlinkMenu"><li>Call</li></NavLink>
+                   <NavLink exact to ="/room" activeClassName="activeNavlinkMenu"><li>Call</li></NavLink>
                    <NavLink exact to ="/autre" activeClassName="activeNavlinkMenu"><li>Carte de l'établissement</li></NavLink>
                    <NavLink exact to ="/autre" activeClassName="activeNavlinkMenu"><li>Carte de l'établissement</li></NavLink>
                    <NavLink exact to ="/" onClick={disconnectUser} className="btn"><li>Déconnexion</li></NavLink>
