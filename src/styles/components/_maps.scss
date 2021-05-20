@@ -10,5 +10,37 @@
         width: 80vw;
         height: 95vh;
         position: relative;
+        .leaflet-popup-content-wrapper{
+            .leaflet-popup-content{
+                margin: 0 5px;
+                width: 180px;
+                text-align: center;
+                align-items: center;
+                p{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100px;
+                }
+                a{
+                    margin-top: 10px;
+                    color: white;
+                    text-decoration: none;
+                    background-color: $color-btn;
+                    padding: 10px 15px;
+                    font-size: 15px;
+                    border-radius: 10px;
+                   
+                }
+            }
+            color: $color-blue-satin;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: rgb(237, 245, 255);
+            
+        }
+        .leaflet-popup-tip{
+            background-color: rgb(237, 245, 255);
+        }
     }
 }

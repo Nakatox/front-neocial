@@ -1,16 +1,25 @@
 import React from "react";
 import { v1 as uuid } from "uuid";
-import { sendRoomUrl } from '../Webservices'
+import { updateUrlRoom } from '../Webservices'
+import Calendar from '../components/Calendar'
+import Menu from '../components/Menu'
 
 const CreateRoom = (props) => {
+    
     function create() {
         const id = uuid();
-        sendRoomUrl(id)
+        updateUrlRoom(`/room/${id}`,117)
         props.history.push(`/room/${id}`);
     }
  
     return (
-        <button onClick={create}>Create room</button>
+        <div className="content-container">
+            <Menu></Menu>
+            <div>
+                <Calendar></Calendar>
+                <button onClick={create}>Create room</button>
+            </div>
+        </div>
     );
 };
 

@@ -84,6 +84,9 @@ function Room(props) {
                 item.peer.signal(payload.signal);
             });
         })
+        socketRef.current.on('USER-JOIN',()=>{
+            console.log("salut");
+        })
     }, []);
 
     function createPeer(userToSignal, callerID, stream) {
@@ -115,13 +118,13 @@ function Room(props) {
 
         return peer;
     }
-
+    
     return (
         <div className="content-container">
             <Menu></Menu>
             <div>
                 <Calendar></Calendar>
-                <Container>
+                <Container className="container">
                     <StyledVideo muted ref={userVideo} autoPlay playsInline />
                     {peers.map((peer, index) => {
                         return (

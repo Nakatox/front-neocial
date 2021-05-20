@@ -129,9 +129,9 @@ function Calendar() {
                     <img src="./img/login/arrow-down.png" alt="" className="image" />
                 </div> */}
             </div>
-            <div className="button-drop button-drop2" onClick={mooveCalendar}>
+            {/* <div className="button-drop button-drop2" onClick={mooveCalendar}>
                 <img src="./img/login/arrow-down.png" alt="" className="image" />
-            </div>
+            </div> */}
         </div>
     )
 }

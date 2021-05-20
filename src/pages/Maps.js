@@ -5,6 +5,7 @@ import TheMap from '../components/TheMap'
 
 
 function Maps() {
+
     return (
         <div className="content-container">
             <Menu></Menu>
