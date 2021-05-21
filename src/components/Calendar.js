@@ -9,27 +9,19 @@ function Calendar() {
     const [check, setCheck] = useState(true)
     const [check2, setCheck2] = useState(true)
     const [courses, setCourses] = useState([])
-    const [title, setTitle] = useState()
-    // const [months, setMonth] = useState([])
+    const [title] = useState()
 
-    // setMonth([ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", 
-    // "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ])
     setTimeout(() => {
         document.querySelector('.fc-today-button').innerHTML = "Aujourd'hui"
-        // document.querySelector('.fc-timegrid-event').style.backgroundColor = "red"
+
     }, 500);
    
     function mooveCalendar(){
         if(!check){
             document.querySelector('.calendar-container').style.display = "none"
-            document.querySelector('.image').style.transform = "rotate(180deg)"
-            document.querySelector('.button-drop2').style.display = "flex"
-
             setCheck(true)
         }else{
-            document.querySelector('.image').style.transform = "rotate(180deg)"
             document.querySelector('.calendar-container').style.display = "flex"
-            document.querySelector('.button-drop2').style.display = "none"
             setCheck(false)
         }
     }
@@ -41,7 +33,7 @@ function Calendar() {
                 setCourses(data.data.course);
             })
             setCheck2(false)
-            setTitle(document.querySelector('.fc-toolbar-title').textContent)
+            // setTitle(document.querySelector('.fc-toolbar-title').textContent)
             // document.querySelector('.fc-toolbar-title').innerHTML = `Semaine du ${title.substr(0,2)} ${months[parseInt(title.substr(3,2))]} au ${title.substr(13,2)} ${months[parseInt(title.substr(3,2))]} ${title.substr(19,4)}`
         }
         
@@ -129,9 +121,9 @@ function Calendar() {
                     <img src="./img/login/arrow-down.png" alt="" className="image" />
                 </div> */}
             </div>
-            {/* <div className="button-drop button-drop2" onClick={mooveCalendar}>
-                <img src="./img/login/arrow-down.png" alt="" className="image" />
-            </div> */}
+            <div className="button-drop button-drop2" onClick={mooveCalendar}>
+                <img src="./img/login/icon-calendar.png" alt="" className="image" />
+            </div>
         </div>
     )
 }

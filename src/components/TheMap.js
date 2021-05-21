@@ -181,7 +181,7 @@ function TheMap() {
             })
             setCheck(false)
         }
-    }, [roomTab])
+    }, [roomTab,check])
 
     function checkPopup(element,array2){
         let response 
@@ -200,16 +200,12 @@ function TheMap() {
         <div className="map-container">
             <MapContainer center={buildingLocation} zoom={20} maxZoom={7} minZoom={7} >
                 <TileLayer
-                    // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    // url="https://tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png?apikey=ac3f80368ca34c009896d794cddb15e3"
                     url="./img/map/test.png"
                     tileSize={1500}
                     zoomControl= {false}
                     scrollWheelZoom= {false}
                     dragging={false}
                     attributionControl={false}
-                    // noWrap={true}
-                    // reuseTiles={false}
                 />
                 {roomLayer.map((e,index)=>{
                     return(

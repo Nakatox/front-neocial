@@ -6,17 +6,11 @@ import Menu from '../components/Menu'
 import Calendar from '../components/Calendar'
 
 const Container = styled.div`
-    padding: 20px;
-    display: flex;
-    height: 100vh;
-    width: 90%;
-    margin: auto;
-    flex-wrap: wrap;
+    
 `;
 
 const StyledVideo = styled.video`
-    height: 40%;
-    width: 50%;
+    
 `;
 
 const Video = (props) => {
@@ -26,7 +20,7 @@ const Video = (props) => {
         props.peer.on("stream", stream => {
             ref.current.srcObject = stream;
         })
-    }, []);
+    }, [props.peer]);
 
     return (
         <StyledVideo playsInline autoPlay ref={ref} />
@@ -87,7 +81,7 @@ function Room(props) {
         socketRef.current.on('USER-JOIN',()=>{
             console.log("salut");
         })
-    }, []);
+    }, [roomID]);
 
     function createPeer(userToSignal, callerID, stream) {
         const peer = new Peer({
@@ -124,7 +118,7 @@ function Room(props) {
             <Menu></Menu>
             <div>
                 <Calendar></Calendar>
-                <Container className="container">
+                <Container className="container-room">
                     <StyledVideo muted ref={userVideo} autoPlay playsInline />
                     {peers.map((peer, index) => {
                         return (

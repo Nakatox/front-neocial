@@ -5,6 +5,7 @@ import CreateRoom from './pages/CreateRoom';
 import Login from './pages/Login';
 import Maps from './pages/Maps';
 import Notfound from './pages/Notfound';
+import ShareFiles from './pages/ShareFiles';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/maps" exact component={Maps} />
+        <Route path="/sharefiles" exact component={ShareFiles} />
         <Route path="/room" exact component={CreateRoom} />
         <Route path="/room/:roomID" component={Room} />
         <Route component={Notfound}></Route>
