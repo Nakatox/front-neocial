@@ -23,7 +23,11 @@
             font-size: 18;
             
             p:nth-child(1){
-                width: 150px;
+                width: max-content;
+            }
+            .TEXTE{
+                width: 500px;
+            
             }
             cursor: pointer;
             

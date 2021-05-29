@@ -11,14 +11,28 @@
 }
 
 .popup-inner2{
+    display: flex;
+    flex-direction: column;
     align-self: center;
     position: relative;
-    margin-left: 45vw;
+    margin-left: 25vw;
     width: 100%;
-    max-width: 300px;
+    max-width: 50%;
 }
-.popup-content2{
 
+.popup-content2{
+    
+    p{
+    }
+}
+.close-btn2{
+    background-color: $color-btn;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 // .popup-inner2 .closebtn2{
